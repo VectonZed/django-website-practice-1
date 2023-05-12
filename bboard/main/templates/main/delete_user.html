@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "layout/basic.html" %}
+
+    {% load bootstrap4 %}
+
+    {% block title %}Удаление пользователя{% endblock %}
+
+    {% block content %}
+    <h2>Удаление пользователя {{object.username}}</h2>
+    <from method="post">
+        {% csrf_token %}
+        {% buttons submit='Удалить' %}{% endbuttons %}
+    </from>
+    {% endblock %}
+</body>
+</html>
